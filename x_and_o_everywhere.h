@@ -5,12 +5,11 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <math.h>
+#include <cstdio>
 
 int clear_buf();
 
 int enter_int_num(int* koeff);
-
-int enter_double_num(double* koeff);
 
 enum Errors
 {
@@ -19,6 +18,27 @@ enum Errors
     arg_function_is_nullptr = 0,
     no_error                = 1
 };
+
+//Struct including coordinates
+struct X_Y
+{
+    int x = 0;
+    int y = 0;
+}x_y;
+
+//Constants using too controle game mode
+const int COORD_FLAG_ON  = 1;
+const int COORD_FLAG_OFF = 0;
+
+//Array, contains of playfield symbols
+char arr[41] = {' ', '_', '_', '_', '_', '_',' ', '\n',
+                '|', '1', '|', '2', '|', '3','|', '\n',
+                '|', '1', '|', '2', '|', '3','|', '\n',
+                '|', '1', '|', '2', '|', '3','|', '\n',
+                ' ', '*', '*', '*', '*', '*',' ', '\n', '\0',};
+
+//Array, contains of variable place.It can't be changed
+const int nums[9]  = {9, 11, 13, 17, 19, 21, 25, 27, 29};
 
 #define check(condition, type_error)      				        														                   		     \
     if (!(condition))                                                                                                                                \

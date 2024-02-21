@@ -1,4 +1,4 @@
-#include "x_and_o_everywhere.h"
+#include "../include/x_and_o_everywhere.h"
 
 //Clean enter buffer
 int clear_buf()

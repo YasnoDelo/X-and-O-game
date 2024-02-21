@@ -1,8 +1,6 @@
 #ifndef communication
 #define communication
 
-#include "x_and_o_everywhere.h"
-
 void coord_DUMP(char* arr);
 
 void DUMP(char* arr);

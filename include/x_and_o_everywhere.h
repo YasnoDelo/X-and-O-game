@@ -6,6 +6,8 @@
 #include <ctype.h>
 #include <math.h>
 #include <cstdio>
+#include "x_and_o_stuff.h"
+#include "x_and_o_comm.h"
 
 int clear_buf();
 
@@ -24,21 +26,16 @@ struct X_Y
 {
     int x = 0;
     int y = 0;
-}x_y;
+};
+
+extern struct X_Y x_y;
 
 //Constants using too controle game mode
 const int COORD_FLAG_ON  = 1;
 const int COORD_FLAG_OFF = 0;
 
-//Array, contains of playfield symbols
-char arr[41] = {' ', '_', '_', '_', '_', '_',' ', '\n',
-                '|', '1', '|', '2', '|', '3','|', '\n',
-                '|', '1', '|', '2', '|', '3','|', '\n',
-                '|', '1', '|', '2', '|', '3','|', '\n',
-                ' ', '*', '*', '*', '*', '*',' ', '\n', '\0',};
-
-//Array, contains of variable place.It can't be changed
-const int nums[9]  = {9, 11, 13, 17, 19, 21, 25, 27, 29};
+extern const int nums[];
+extern char arr[];
 
 #define check(condition, type_error)      				        														                   		     \
     if (!(condition))                                                                                                                                \
@@ -56,5 +53,7 @@ const int nums[9]  = {9, 11, 13, 17, 19, 21, 25, 27, 29};
 
 #define RED(b) "\033[91m" b "\033[39m"
 #define GREEN(b) "\033[32m" b "\033[39m"
+#define YELLOW(b) "\033[33m" b "\033[39m"
+#define BLUE(b) "\033[36m" b "\033[39m"
 
 #endif

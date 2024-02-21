@@ -1,4 +1,4 @@
-#include "x_and_o_comm.h"
+#include "../include/x_and_o_everywhere.h"
 
 //Dump of playing field. Using coordinates
 void coord_DUMP(char* arr)
@@ -18,17 +18,37 @@ void coord_DUMP(char* arr)
     putchar('y');
     putchar('\n');
 
-    printf(GREEN("%s"), arr);
+ for(int co = 0; co < 40; co++)
+    {
+        if(arr[co] == 'x')
+        {
+            printf(BLUE("%c"), arr[co]);
+        } else if (arr[co] == 'o')
+        {
+            printf(YELLOW("%c"), arr[co]);
+        } else
+            printf(GREEN("%c"), arr[co]);
+    }
 }
 
 //Dump of playing field. No coordinates
 void DUMP(char* arr)
 {
-    printf(GREEN("%s"), arr);
+     for(int co = 0; co < 40; co++)
+    {
+        if(arr[co] == 'x')
+        {
+            printf(BLUE("%c"), arr[co]);
+        } else if (arr[co] == 'o')
+        {
+            printf(YELLOW("%c"), arr[co]);
+        } else
+            printf(GREEN("%c"), arr[co]);
+    }
 }
 
 //Dump of playing field with information about the newest added element. Using coordinates
-void coord_DUMP(char* arr,const int* nums, int num)
+void coord_DUMP(char* arr, const int* nums, int num)
 {   
     for(int co = 0; co < 10; co++)
         putchar('-');
@@ -45,17 +65,7 @@ void coord_DUMP(char* arr,const int* nums, int num)
     putchar('y');
     putchar('\n');
 
-    for(int co = 0; co < 40; co++)
-    {
-        if(co == nums[num])
-        {
-            printf(RED("%c"), arr[co]);
-        }
-        else
-        {
-            printf(GREEN("%c"), arr[co]);
-        }
-    }
+    DUMP(arr, nums, num);
 }
 
 //Dump of playing field with information about the newest added element. No coordinates
@@ -69,6 +79,13 @@ void DUMP(char* arr, const int* nums, int num)
         }
         else
         {
+            if(arr[co] == 'x')
+            {
+                printf(BLUE("%c"), arr[co]);
+            } else if (arr[co] == 'o')
+            {
+                printf(YELLOW("%c"), arr[co]);
+            } else
             printf(GREEN("%c"), arr[co]);
         }
     }

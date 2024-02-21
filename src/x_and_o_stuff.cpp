@@ -1,4 +1,4 @@
-#include "x_and_o_stuff.h"
+#include "../include/x_and_o_everywhere.h"
 
 //Cleaner of dirty playing field
 void clean(char* arr, const int* nums)
@@ -56,7 +56,7 @@ int chck_win(char* arr)
 }
 
 //Checker of correct coordinate enter
-int coord_chck(int* co, X_Y* coord_kit, char* arr)
+int coord_chck(int* co, struct X_Y* coord_kit, char* arr)
 {
     if(coord_kit->x < 1 || coord_kit->x > 3)
     {
@@ -65,7 +65,7 @@ int coord_chck(int* co, X_Y* coord_kit, char* arr)
 
         printf(RED("Wrong coordinate x\nReturned previous step. Try to be more attentive\n"));
 
-        DUMP(arr);
+        coord_DUMP(arr);
 
         return 1;
     }
@@ -77,7 +77,7 @@ int coord_chck(int* co, X_Y* coord_kit, char* arr)
 
         printf(RED("Wrong coordinate y\nReturned previous step. Try to be more attentive\n"));
 
-        DUMP(arr);
+        coord_DUMP(arr);
 
         return 1;
     }
@@ -89,7 +89,7 @@ int coord_chck(int* co, X_Y* coord_kit, char* arr)
 //Gameplay with complex coordinate enter
 int coord_gameplay(char* arr, const int* nums)
 {
-    X_Y var = {0, 0};
+    struct X_Y var = {0, 0};
     int buf = 0;
 
     for(int co = 0; co < 9; co++)

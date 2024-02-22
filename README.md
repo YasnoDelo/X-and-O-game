@@ -1,5 +1,6 @@
 After compiling by make command and running the programme "lets_play" in terminal appears launch menu. There you have to make choise:
 ![Иллюстрация к проекту](https://github.com/YasnoDelo/X-and-O-game/blob/main/img/launch_menu.png)
+
 Answering "y", you proove, that you are matimatical motherfucker:
 ![Иллюстрация к проекту](https://github.com/YasnoDelo/X-and-O-game/blob/main/img/coord_gameplay.png)
 Chose place on gameboard and enter its coordinate. Give your attention to the fact, that Y axis is inversed.
